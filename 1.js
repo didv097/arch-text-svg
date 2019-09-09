@@ -14,7 +14,7 @@ const y = parseInt(args[6]);
 const TextToSVG = require('text-to-svg');
 const textToSVG = TextToSVG.loadSync(font);
 
-const options = {x: x, y: y, fontSize: height, anchor: 'top'};
+const options = {x: 0, y: 0, fontSize: height, anchor: 'top'};
 
 const d = textToSVG.getD(text, options);
 
@@ -34,7 +34,6 @@ for (let i = 0; i < numbers.length; i += 2) {
 	minY = Math.min(minY, numbers[i + 1]);
 }
 
-// console.log(minX, minY, maxX, maxY);
 orgWidth = maxX - minX;
 orgHeight = maxY - minY;
 
@@ -44,13 +43,13 @@ for (let i = 0; i < numbers.length; i += 2) {
 	numbers[i + 1] -= minY;
 	numbers[i + 1] *= height / orgHeight;
 	numbers[i + 1] += Math.pow((numbers[i] - width / 2), 2) * 4 * arch_height / Math.pow(width, 2);
+	numbers[i] += x;
+	numbers[i + 1] += y;
 }
 
 for (let i = 0; i < numbers.length; i ++) {
 	numbers[i] = Math.floor(numbers[i] * 100) / 100;
 }
-
-// console.log(numbers);
 
 let ret = "", i;
 
