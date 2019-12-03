@@ -1,5 +1,8 @@
 # Generate SVG path of arch text
 
+### install text-to-svg package
+`npm i --save text-to-svg`
+
 ### arch script
 `node arch.js text font width height arch_height x y`
 
