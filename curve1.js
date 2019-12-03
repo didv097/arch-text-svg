@@ -1,16 +1,11 @@
 
 //npm install --save text-to-svg
 
-const args = process.argv.slice(2);	// text, font, font size(height), arch height
+const args = process.argv.slice(2);	// text, font, font size(height)
 
 const text = args[0];
 const font = args[1];
 const font_size = parseInt(args[2]);
-const arch_height = parseInt(args[3]);
-
-if (arch_height <= 0) {
-	return;
-}
 
 const TextToSVG = require('text-to-svg');
 const textToSVG = TextToSVG.loadSync(font);
@@ -28,14 +23,13 @@ for (i in text) {
 	totalWidth += width[i];
 }
 const baseline = textToSVG.getMetrics(text, options).baseline;
-const radius = totalWidth * totalWidth / arch_height / 8;
-const totalAngle = totalWidth / radius;
+const radius = totalWidth / Math.PI;
 
 for (i in text) {
 	let numbers = d[i].split(/[A-Z ]+/).slice(1);
 	numbers.pop();
 	let chars = d[i].split(/[.0-9]+/);
-	let angle = totalAngle * ((pos[i] + width[i] / 2) / totalWidth - 0.5);
+	let angle = Math.PI * ((pos[i] + width[i] / 2) / totalWidth - 0.5);
 	for (j = 0; j < numbers.length; j += 2) {
 		numbers[j] -= width[i] / 2;
 		numbers[j + 1] = Number(numbers[j + 1]) - radius - baseline;
