@@ -1,6 +1,3 @@
-
-//npm install --save text-to-svg
-
 const args = process.argv.slice(2);	// text, font, font size(height)
 
 const text = args[0];
@@ -45,4 +42,5 @@ for (i in text) {
 	}
 	ret += chars[j];
 }
+
 console.log(ret);

@@ -1,5 +1,3 @@
-//npm install --save text-to-svg
-
 const args = process.argv.slice(2);	// text, font_size, font
 
 const text = args[0];
