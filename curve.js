@@ -1,14 +1,12 @@
 
 //npm install --save text-to-svg
 
-const args = process.argv.slice(2);	// text, font, font size(height), arch height, x_coord, y_coord
+const args = process.argv.slice(2);	// text, font, font size(height), arch height
 
 const text = args[0];
 const font = args[1];
 const font_size = parseInt(args[2]);
 const arch_height = parseInt(args[3]);
-const x = parseInt(args[4]);
-const y = parseInt(args[5]);
 
 if (arch_height <= 0) {
 	return;
