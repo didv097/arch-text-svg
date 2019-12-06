@@ -32,7 +32,7 @@ for (i in text) {
 	let numbers = d[i].split(/[A-Z ]+/).slice(1);
 	numbers.pop();
 	let chars = d[i].split(/[.0-9]+/);
-	let angle = totalAngle * ((pos[i] + charWidth[i] / 2) / totalWidth - 0.5);
+	let angle = totalAngle * (pos[i] / totalWidth + 0.5 / text.length - 0.5);
 	for (j = 0; j < numbers.length; j += 2) {
 		numbers[j] -= charWidth[i] / 2;
 		numbers[j + 1] = Number(numbers[j + 1]) - radius - baseline;
