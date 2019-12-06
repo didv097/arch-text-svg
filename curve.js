@@ -9,7 +9,7 @@ const x = parseInt(args[5]);
 const y = parseInt(args[6]);
 
 const TextToSVG = require('text-to-svg');
-const textToSVG = TextToSVG.loadSync();
+const textToSVG = TextToSVG.loadSync(font);
 
 const options = {x: 0, y: 0, fontSize: font_size, anchor: 'top'};
 
