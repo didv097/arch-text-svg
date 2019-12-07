@@ -8,6 +8,8 @@ const arch_height = parseInt(args[4]);
 const x = parseInt(args[5]);
 const y = parseInt(args[6]);
 
+arch_height = Math.max(arch_height, 1);
+
 const TextToSVG = require('text-to-svg');
 const textToSVG = TextToSVG.loadSync(font);
 
