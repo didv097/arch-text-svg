@@ -57,7 +57,7 @@ for (j = 0; j < allNumbers.length; ) {
 }
 for (j = 0; j < allNumbers.length; ) {
 	if (allNumbers[j] != "") {
-		allNumbers[j] = (allNumbers[j] - minX) * width / (maxX - minX) + x;
+		allNumbers[j] = allNumbers[j] - minX + x;
 		allNumbers[j] = Math.round(allNumbers[j] * 100) / 100;
 		allNumbers[j + 1] = Math.round(allNumbers[j + 1] * 100) / 100;
 		j += 2;
