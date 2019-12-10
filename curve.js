@@ -1,12 +1,11 @@
-const args = process.argv.slice(2);	// text, font, font size(height), width, arch height, x, y
+const args = process.argv.slice(2);	// text, font, font size(height), arch height, x, y
 
 const text = args[0];
 const font = args[1];
 const font_size = parseInt(args[2]);
-const width = parseInt(args[3]);
-const arch_height = Math.max(parseInt(args[4]), 1);
-const x = parseInt(args[5]);
-const y = parseInt(args[6]);
+const arch_height = Math.max(parseInt(args[3]), 1);
+const x = parseInt(args[4]);
+const y = parseInt(args[5]);
 
 const TextToSVG = require('text-to-svg');
 const textToSVG = TextToSVG.loadSync(font);
